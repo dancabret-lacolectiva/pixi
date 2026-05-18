@@ -312,7 +312,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="fgC">
     <div class="fiC"><label>Nombre</label><input id="cnC" type="text" placeholder="Tu nombre"></div>
     <div class="fiC"><label>Email</label><input id="ceC" type="email" placeholder="correo@tunegocio.com"></div>
+    <div class="fiC"><label>WhatsApp / Teléfono</label><input id="ctC" type="tel" placeholder="+1 809 000 0000"></div>
     <div class="fiC"><label>Hotel o restaurante</label><input id="cbC" type="text" placeholder="Ej. Hotel Casa Grande"></div>
+    <div class="fiC"><label>Tipo de negocio</label>
+      <select id="ctpC" style="width:100%;padding:10px 12px;border:1px solid #D4CEC7;border-radius:6px;font-size:14px;font-family:inherit;color:#1A1A1A;background:#fff;appearance:none;-webkit-appearance:none;cursor:pointer">
+        <option value="">Selecciona...</option>
+        <option value="Hotel">Hotel</option>
+        <option value="Restaurante">Restaurante</option>
+        <option value="Bar">Bar</option>
+        <option value="Resort">Resort</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+    <div class="fiC"><label>País</label><input id="cpC" type="text" placeholder="Ej. Honduras"></div>
   </div>
   <button class="btnC" onclick="runC()">Ver mi diagnóstico →</button>
   <div class="skipC" onclick="skipC()">Ver sin registrarme</div>
@@ -379,7 +391,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <script>
 
-const SHEETS_URL = "https://script.google.com/macros/s/AKfycbzRks-zxiPT9bdAiA9PaNSTbdy-hWZ2p4nSCWe0Gs384BMS2AeiYDmhvG1Whv1IyLLQ/exec";
+const SHEETS_URL = "https://script.google.com/macros/s/AKfycbzSFjD3qTL74WGDzYLmG-CV0NorsCJWfgbzGmK-CW7u65tpdzSbmn02N850Dnnwj9xj/exec";
 
 function saveToSheets(data) {
   fetch(SHEETS_URL, {
@@ -491,8 +503,18 @@ function saveFields(){
 
 function qNextC(){saveFields();if(curC<STEPS.length-1){curC++;renderQC();}else goC('scC');}
 function qPrevC(){if(curC>0){saveFields();curC--;renderQC();}}
-function skipC(){userC={name:'',email:'',brand:'Tu negocio'};loadC();}
-function runC(){userC.name=document.getElementById('cnC').value.trim()||'';userC.email=document.getElementById('ceC').value.trim()||'';userC.brand=document.getElementById('cbC').value.trim()||'Tu negocio';loadC();}
+function skipC(){userC={name:'',email:'',phone:'',brand:'Tu negocio',tipo:'',pais:'',instagram:''};loadC();}
+function runC(){
+  const pi=ansC['presencia_info']||{};
+  userC.name=document.getElementById('cnC').value.trim()||'';
+  userC.email=document.getElementById('ceC').value.trim()||'';
+  userC.phone=document.getElementById('ctC').value.trim()||'';
+  userC.brand=document.getElementById('cbC').value.trim()||'Tu negocio';
+  userC.tipo=document.getElementById('ctpC').value||'';
+  userC.pais=document.getElementById('cpC').value.trim()||'';
+  userC.instagram=pi.ig||'';
+  loadC();
+}
 
 function loadC(){
   goC('sldC');
@@ -643,7 +665,11 @@ function renderC(data){
   saveToSheets({
     nombre: userC.name || '',
     email: userC.email || '',
+    telefono: userC.phone || '',
     negocio: userC.brand || '',
+    tipo: userC.tipo || '',
+    pais: userC.pais || '',
+    instagram: userC.instagram || '',
     semaforo: data.semaforo || '',
     score: Math.round(data.total),
     claridad: Math.round(data.scores.claridad),
