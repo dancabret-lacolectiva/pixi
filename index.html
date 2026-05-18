@@ -6,19 +6,19 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#E8E3DC;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem}
-#appC{background:#F0EDE7;border-radius:16px;overflow:hidden;min-height:500px;width:100%;max-width:480px;box-shadow:0 4px 40px rgba(0,0,0,.08)}
+#appC{background:#F8F6FB;border-radius:16px;overflow:hidden;min-height:500px;width:100%;max-width:480px;box-shadow:0 4px 40px rgba(0,0,0,.08)}
 .scrC{display:none;flex-direction:column;min-height:500px}
 .scrC.on{display:flex}
-#slC,#sqC,#scC,#srC{padding:2.5rem;background:#F0EDE7}
-#sldC{padding:2.5rem;background:#F0EDE7;align-items:center;justify-content:center;text-align:center}
+#slC,#sqC,#scC,#srC{padding:2.5rem;background:#F8F6FB}
+#sldC{padding:2.5rem;background:#F8F6FB;align-items:center;justify-content:center;text-align:center}
 
 .logoC{font-size:10px;letter-spacing:.18em;color:#B8B0A6;font-weight:500;margin-bottom:1.75rem;text-transform:uppercase}
-.logoC b{color:#E53C00;font-weight:500}
+.logoC b{color:#6B3FA0;font-weight:500}
 
 .char-bigC{display:flex;gap:16px;align-items:center;margin-bottom:2rem}
 .charC{width:80px;height:80px;border-radius:50%;background:#fff;border:2px solid #E8E3DC;overflow:hidden;flex-shrink:0}
 .charC img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.char-nameC{font-size:11px;font-weight:600;color:#E53C00;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.char-nameC{font-size:11px;font-weight:600;color:#6B3FA0;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
 .char-tagC{font-size:13px;color:#5a5550;line-height:1.4;max-width:260px}
 .char-tagC b{color:#1A1A1A;font-weight:600}
 
@@ -26,14 +26,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .charSmC{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #E8E3DC;overflow:hidden;flex-shrink:0}
 .charSmC img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .bubbleC{background:#fff;border:1px solid #E8E3DC;border-radius:4px 14px 14px 14px;padding:13px 16px;font-size:13px;color:#5a5550;line-height:1.55;flex:1}
-.bubbleC b{color:#E53C00;font-weight:600}
+.bubbleC b{color:#6B3FA0;font-weight:600}
 
 .h1C{font-size:26px;font-weight:600;color:#1A1A1A;line-height:1.2;margin-bottom:.6rem;max-width:360px}
-.h1C span{color:#E53C00}
+.h1C span{color:#6B3FA0}
 .subC{font-size:13px;color:#888780;line-height:1.6;max-width:320px;margin-bottom:2rem}
 .pillsC{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:2.5rem}
-.pillC{font-size:10px;color:#E53C00;background:#fff;border:1px solid #F5C4B3;padding:5px 12px;border-radius:4px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.btnC{background:#E53C00;color:#fff;border:none;padding:13px 26px;font-size:14px;font-weight:600;border-radius:6px;cursor:pointer;font-family:inherit;transition:opacity .15s}
+.pillC{font-size:10px;color:#6B3FA0;background:#fff;border:1px solid #D4C2E8;padding:5px 12px;border-radius:4px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.btnC{background:#6B3FA0;color:#fff;border:none;padding:13px 26px;font-size:14px;font-weight:600;border-radius:6px;cursor:pointer;font-family:inherit;transition:opacity .15s}
 .btnC:hover{opacity:.85}
 .btnGhostC{background:transparent;color:#B8B0A6;border:1px solid #D4CEC7;padding:11px 20px;font-size:13px;border-radius:6px;cursor:pointer;font-family:inherit;transition:all .15s}
 .btnGhostC:hover{border-color:#888780;color:#5a5550}
@@ -42,27 +42,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 .progC{display:flex;gap:4px;margin-bottom:2rem}
 .pdC{height:2px;flex:1;background:#D4CEC7;border-radius:2px;transition:background .3s}
-.pdC.d{background:#E53C00}.pdC.a{background:#F0997B}
+.pdC.d{background:#6B3FA0}.pdC.a{background:#A88BC9}
 
-.qdimC{font-size:10px;letter-spacing:.14em;color:#E53C00;font-weight:600;margin-bottom:.5rem;text-transform:uppercase}
+.qdimC{font-size:10px;letter-spacing:.14em;color:#6B3FA0;font-weight:600;margin-bottom:.5rem;text-transform:uppercase}
 .qqC{font-size:18px;font-weight:600;color:#1A1A1A;line-height:1.3;margin-bottom:.4rem;max-width:440px}
 .qsubC{font-size:12px;color:#888780;margin-bottom:1.25rem;line-height:1.5;min-height:1rem}
 
 .optsC{display:flex;flex-direction:column;gap:7px;margin-bottom:1.75rem}
 .optC{background:#fff;border:1px solid #E8E3DC;color:#888780;padding:13px 16px;font-size:13px;border-radius:6px;cursor:pointer;text-align:left;transition:all .15s;font-family:inherit;line-height:1.4}
-.optC:hover{border-color:#F0997B;color:#1A1A1A}
-.optC.selC{border-color:#E53C00;color:#E53C00;background:#FAECE7}
+.optC:hover{border-color:#A88BC9;color:#1A1A1A}
+.optC.selC{border-color:#6B3FA0;color:#6B3FA0;background:#F0E8F7}
 
 .yn-row{display:flex;gap:8px;margin-bottom:.75rem}
 .yn-btn{flex:1;background:#fff;border:1px solid #E8E3DC;color:#888780;padding:11px;font-size:14px;border-radius:6px;cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s;text-align:center}
-.yn-btn:hover{border-color:#F0997B;color:#1A1A1A}
-.yn-btn.selC{border-color:#E53C00;color:#E53C00;background:#FAECE7}
+.yn-btn:hover{border-color:#A88BC9;color:#1A1A1A}
+.yn-btn.selC{border-color:#6B3FA0;color:#6B3FA0;background:#F0E8F7}
 
 .field-group{display:flex;flex-direction:column;gap:10px;margin-bottom:1.25rem}
 .field-item{display:flex;flex-direction:column;gap:4px}
 .field-item label{font-size:11px;color:#888780;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
 .field-item input{background:#fff;border:1px solid #D4CEC7;color:#1A1A1A;padding:11px 14px;font-size:13px;border-radius:6px;font-family:inherit;transition:border-color .15s}
-.field-item input:focus{outline:none;border-color:#E53C00}
+.field-item input:focus{outline:none;border-color:#6B3FA0}
 .field-item input::placeholder{color:#C8C2BB}
 .q-label{font-size:13px;color:#5a5550;margin-bottom:.5rem;line-height:1.4}
 
@@ -73,13 +73,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .fiC{display:flex;flex-direction:column;gap:5px}
 .fiC label{font-size:11px;color:#888780;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
 .fiC input{background:#fff;border:1px solid #D4CEC7;color:#1A1A1A;padding:12px 14px;font-size:14px;border-radius:6px;font-family:inherit;transition:border-color .15s}
-.fiC input:focus{outline:none;border-color:#E53C00}
+.fiC input:focus{outline:none;border-color:#6B3FA0}
 .fiC input::placeholder{color:#C8C2BB}
 .skipC{font-size:11px;color:#C8C2BB;cursor:pointer;text-align:center;margin-top:.75rem;transition:color .15s}
 .skipC:hover{color:#888780}
 
 .lbC{width:120px;height:2px;background:#D4CEC7;margin:1.5rem auto .75rem;overflow:hidden;border-radius:2px}
-.lbiC{height:100%;width:0%;background:#E53C00;animation:lbC 3.5s ease-in-out forwards}
+.lbiC{height:100%;width:0%;background:#6B3FA0;animation:lbC 3.5s ease-in-out forwards}
 @keyframes lbC{0%{width:0}25%{width:28%}60%{width:62%}85%{width:84%}100%{width:100%}}
 .lmC{font-size:12px;color:#B8B0A6;letter-spacing:.04em}
 
@@ -87,7 +87,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .rblC{font-size:10px;letter-spacing:.12em;color:#B8B0A6;margin-bottom:5px;text-transform:uppercase}
 .rbnC{font-size:18px;font-weight:600;color:#1A1A1A}
 .rswC{text-align:right}
-.rsnC{font-size:36px;font-weight:600;color:#E53C00;line-height:1}
+.rsnC{font-size:36px;font-weight:600;color:#6B3FA0;line-height:1}
 .rslC{font-size:10px;color:#B8B0A6;margin-top:3px}
 .rdgC{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.5rem}
 .dcC{background:#fff;border-radius:6px;padding:13px 14px;border:1px solid #E8E3DC}
@@ -98,7 +98,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .secLC{font-size:9px;letter-spacing:.14em;color:#B8B0A6;margin-bottom:.85rem;text-transform:uppercase;font-weight:600}
 .hiC{padding:11px 0;border-bottom:1px solid #E8E3DC;display:flex;gap:10px;align-items:flex-start}
 .hiC:last-child{border-bottom:none}
-.hdC{width:4px;height:4px;background:#E53C00;border-radius:50%;margin-top:7px;flex-shrink:0}
+.hdC{width:4px;height:4px;background:#6B3FA0;border-radius:50%;margin-top:7px;flex-shrink:0}
 .ht2C{font-size:13px;color:#5a5550;line-height:1.55}
 
 .sem-wrap{border-radius:10px;overflow:hidden;margin-bottom:1.75rem;border:1px solid #E8E3DC}
@@ -116,32 +116,170 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .charXsC img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .rfC{font-size:10px;color:#C8C2BB;text-align:center;margin-top:1rem;letter-spacing:.06em;text-transform:uppercase}
 .result-note{font-size:12px;color:#B8B0A6;text-align:center;margin-top:.5rem;line-height:1.5}
+
+/* ── LANDING REDESIGN ── */
+#slC {
+  background: #FFFFFF !important;
+  padding: 0 !important;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.land-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 60%, rgba(107,63,160,.10) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(107,63,160,.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.land-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem 2.5rem 2rem;
+}
+.land-logo {
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: #888780;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: auto;
+  padding-top: .25rem;
+}
+.land-logo b { color: #6B3FA0; font-weight: 500; }
+
+.land-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.land-pixi-wrap {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.land-pixi-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(107,63,160,.25);
+  display: block;
+}
+.land-pixi-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background: #6B3FA0;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+.land-eyebrow {
+  font-size: 11px;
+  letter-spacing: .14em;
+  color: #6B3FA0;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.land-h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1A1A1A;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  max-width: 340px;
+  letter-spacing: -.02em;
+}
+.land-h1 span { color: #6B3FA0; }
+.land-desc {
+  font-size: 14px;
+  color: #5a5550;
+  line-height: 1.6;
+  max-width: 300px;
+  margin-bottom: 2rem;
+}
+.land-cta {
+  background: #6B3FA0;
+  color: #fff;
+  border: none;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .15s;
+  letter-spacing: .02em;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(107,63,160,.18);
+}
+.land-cta:hover { background: #5A3289; transform: translateY(-1px); box-shadow: 0 4px 18px rgba(107,63,160,.28); }
+.land-dims {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.land-dim {
+  font-size: 10px;
+  color: #888780;
+  border: 0.5px solid #D4CEC7;
+  padding: 4px 10px;
+  border-radius: 3px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.land-foot-new {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 0.5px solid #E8E3DC;
+  margin-top: .5rem;
+}
+.land-foot-note { font-size: 11px; color: #888780; }
+/* OVERRIDE app container for landing */
+#appC { background: #FFFFFF; border-radius: 16px; }
+
 </style>
 
 <div id="appC">
 
 <!-- LANDING -->
 <div id="slC" class="scrC on">
-  <div class="logoC">PIXI <b>—</b> by La Colectiva©</div>
-  <div class="char-bigC">
-    <div class="charC"><img src="PIXI_.png" alt="PIXI" onerror="this.parentNode.style.fontSize='38px';this.parentNode.innerHTML='🤖'"></div>
-    <div>
-      <div class="char-nameC">Hola, soy PIXI</div>
-      <div class="char-tagC">Voy a hacerte <b>unas preguntas rápidas</b> y te digo si tu negocio existe para la IA — o no.</div>
+  <div class="land-bg"></div>
+  <div class="land-inner">
+    <div class="land-logo">PIXI <b>—</b> by La Colectiva&copy;</div>
+    <div class="land-hero">
+      <div class="land-pixi-wrap">
+        <img class="land-pixi-img" src="PIXI_.png" alt="PIXI" onerror="this.style.display='none'">
+        <div class="land-pixi-badge">IA</div>
+      </div>
+      <div class="land-eyebrow">Diagn&oacute;stico gratuito</div>
+      <div class="land-h1">&iquest;C&oacute;mo est&aacute;<br>tu negocio<br><span>a nivel digital?</span></div>
+      <div class="land-desc">Voy a hacerte unas preguntas r&aacute;pidas y te digo c&oacute;mo est&aacute; tu negocio a nivel digital, para humanos e IA.</div>
+      <button class="land-cta" onclick="goC('sqC')">Empezar diagn&oacute;stico &rarr;</button>
+      <div class="land-dims">
+        <span class="land-dim">Claridad</span>
+        <span class="land-dim">Presencia</span>
+        <span class="land-dim">Reputaci&oacute;n</span>
+        <span class="land-dim">Relevancia</span>
+      </div>
     </div>
-  </div>
-  <div class="h1C">¿Tu negocio es visible,<br><span>claro y elegible?</span></div>
-  <div class="subC">Diagnóstico gratuito de visibilidad. Sin registro previo.</div>
-  <div class="pillsC">
-    <span class="pillC">Claridad</span>
-    <span class="pillC">Presencia</span>
-    <span class="pillC">Reputación</span>
-    <span class="pillC">Relevancia</span>
-  </div>
-  <button class="btnC" onclick="goC('sqC')" style="align-self:flex-start">Empezar →</button>
-  <div class="land-foot">
-    <span class="land-noteC">Gratis · 2 minutos · sin registro</span>
-    <span class="land-noteC">by La Colectiva©</span>
+    <div class="land-foot-new">
+      <span class="land-foot-note">Gratis &middot; Sin registro</span>
+      <span class="land-foot-note">by La Colectiva&copy;</span>
+    </div>
   </div>
 </div>
 
@@ -252,9 +390,9 @@ function saveToSheets(data) {
   }).catch(err => console.log('Sheets error:', err));
 }
 const STEPS=[
-  {dim:"Claridad",hint:"Piensa cómo describirías tu negocio a alguien que no lo conoce.",q:"Cuando alguien le pregunta a tu cliente qué es tu hotel o restaurante, ¿qué crees que responde?",sub:"",type:"options",key:"claridad",opts:["Algo específico y memorable — tiene una respuesta clara","Una descripción general — 'es un hotel bonito', 'un buen restaurante'","No sabe bien cómo explicarlo, pero le gustó","Honestamente no lo sé"],scores:[90,55,35,20]},
+  {dim:"Claridad",hint:"Piensa cómo describirías tu negocio a alguien que no lo conoce.",q:"Cuando alguien le pregunta a tu cliente cómo es tu hotel o restaurante, ¿qué crees que responde?",sub:"",type:"options",key:"claridad",opts:["Algo específico y memorable — tiene una respuesta clara","Una descripción general — 'es un hotel bonito', 'un buen restaurante'","No sabe bien cómo explicarlo, pero le gustó","Honestamente no lo sé"],scores:[90,55,35,20]},
   {dim:"Presencia",hint:"Esta información nos ayuda a entender dónde estás hoy.",q:"Cuéntame dónde está tu negocio online",sub:"Completa lo que tengas. Si no tienes alguno, déjalo en blanco.",type:"presence_fields",key:"presencia_info"},
-  {dim:"Presencia",hint:"Ahora que sé dónde estás, dime cómo crees que está tu presencia.",q:"¿Cómo crees que está tu presencia digital con lo que tienes?",sub:"",type:"options",key:"presencia",opts:["Completa y activa — todo actualizado y funcionando","Activa en redes pero mi web o Google Business está descuidado","Tengo algo pero no lo mantengo ni optimizo","Prácticamente no tengo presencia digital"],scores:[90,55,35,15]},
+  {dim:"Presencia",hint:"Ahora que sé dónde estás, dime cómo crees que está tu presencia.",q:"¿Cómo crees que está tu presencia digital con lo que tienes?",sub:"",type:"options",key:"presencia",opts:["Web actualizada + redes activas + Google My Business completo","Redes activas pero web desactualizada o sin info útil","Presencia básica — publicamos poco, nada está optimizado","Casi no tenemos presencia digital activa"],scores:[90,55,35,15]},
   {dim:"Reputación",hint:"Los reviews son el activo de visibilidad más subestimado.",q:"¿Gestionas activamente tu reputación online?",sub:"",type:"yn_double",key:"reputacion",q1:"¿Te aseguras de que te dejen reviews en Google o TripAdvisor?",q2:"¿Respondes a todos los reviews que recibes?",key1:"reviews_pide",key2:"reviews_responde"},
   {dim:"Relevancia",hint:"Si la IA no te encuentra con estas palabras, no existes para tus clientes potenciales.",q:"¿Cómo te buscarían tus clientes?",sub:"",type:"search_fields",key:"relevancia"}
 ];
@@ -287,8 +425,9 @@ function renderBody(s){
   } else if(s.type==='presence_fields'){
     const v=ansC['presencia_info']||{};
     body.innerHTML=`<div class="field-group">
+      <div class="field-item"><label>Nombre de tu negocio</label><input type="text" id="pf_name" placeholder="Ej. Hotel Casa Grande" value="${v.name||''}"></div>
+      <div class="field-item"><label>Ciudad</label><input type="text" id="pf_city" placeholder="Ej. Tegucigalpa" value="${v.city||''}"></div>
       <div class="field-item"><label>Instagram</label><input type="text" id="pf_ig" placeholder="@tunegocio" value="${v.ig||''}"></div>
-      <div class="field-item"><label>Facebook</label><input type="text" id="pf_fb" placeholder="facebook.com/tunegocio" value="${v.fb||''}"></div>
       <div class="field-item"><label>Sitio web</label><input type="text" id="pf_web" placeholder="www.tunegocio.com" value="${v.web||''}"></div>
       <div class="field-item"><label>¿Tienes Google Business?</label>
         <div class="yn-row" style="margin-top:4px">
@@ -316,15 +455,15 @@ function renderBody(s){
   } else if(s.type==='search_fields'){
     const v=ansC['relevancia_data']||{};
     body.innerHTML=`<div class="field-group">
-      <div class="field-item"><label>¿Cómo buscarías tu negocio en Google?</label><input type="text" id="rf_google" placeholder='Ej. "hotel boutique en Tegucigalpa"' value="${v.google||''}"></div>
-      <div class="field-item"><label>¿Te encuentras con esa búsqueda?</label>
+      <div class="field-item"><label style="text-transform:none;letter-spacing:0;font-size:13px;color:#5a5550;font-weight:500">¿Cómo buscarías tu negocio en Google?</label><input type="text" id="rf_google" placeholder='Ej. "hotel boutique en Tegucigalpa"' value="${v.google||''}"></div>
+      <div class="field-item"><label style="text-transform:none;letter-spacing:0;font-size:12px;color:#888780;font-weight:400">¿Te encuentras con esa búsqueda?</label>
         <div class="yn-row" style="margin-top:4px">
           <button class="yn-btn${v.google_yn==='si'?' selC':''}" onclick="pickSearch('google_yn','si')">Sí</button>
           <button class="yn-btn${v.google_yn==='no'?' selC':''}" onclick="pickSearch('google_yn','no')">No</button>
         </div>
       </div>
-      <div class="field-item"><label>¿Con qué prompt te buscarías en ChatGPT?</label><input type="text" id="rf_gpt" placeholder='Ej. "mejor restaurante en Santo Domingo"' value="${v.gpt||''}"></div>
-      <div class="field-item"><label>¿Te encuentras con ese prompt?</label>
+      <div class="field-item"><label style="text-transform:none;letter-spacing:0;font-size:13px;color:#5a5550;font-weight:500">¿Con qué prompt te buscarías en ChatGPT?</label><input type="text" id="rf_gpt" placeholder='Ej. "mejor restaurante en Santo Domingo"' value="${v.gpt||''}"></div>
+      <div class="field-item"><label style="text-transform:none;letter-spacing:0;font-size:12px;color:#888780;font-weight:400">¿Te encuentras con ese prompt?</label>
         <div class="yn-row" style="margin-top:4px">
           <button class="yn-btn${v.gpt_yn==='si'?' selC':''}" onclick="pickSearch('gpt_yn','si')">Sí</button>
           <button class="yn-btn${v.gpt_yn==='no'?' selC':''}" onclick="pickSearch('gpt_yn','no')">No</button>
@@ -343,7 +482,7 @@ function saveFields(){
   const s=STEPS[curC];
   if(s.type==='presence_fields'){
     const c=ansC['presencia_info']||{};
-    ansC['presencia_info']={...c,ig:document.getElementById('pf_ig')?.value.trim()||'',fb:document.getElementById('pf_fb')?.value.trim()||'',web:document.getElementById('pf_web')?.value.trim()||''};
+    ansC['presencia_info']={...c,name:document.getElementById('pf_name')?.value.trim()||'',city:document.getElementById('pf_city')?.value.trim()||'',ig:document.getElementById('pf_ig')?.value.trim()||'',web:document.getElementById('pf_web')?.value.trim()||''};
   } else if(s.type==='search_fields'){
     const c=ansC['relevancia_data']||{};
     ansC['relevancia_data']={...c,google:document.getElementById('rf_google')?.value.trim()||'',gpt:document.getElementById('rf_gpt')?.value.trim()||''};
@@ -357,10 +496,28 @@ function runC(){userC.name=document.getElementById('cnC').value.trim()||'';userC
 
 function loadC(){
   goC('sldC');
-  const msgs=['Revisando tu presencia...','Analizando visibilidad...','Evaluando reputación...','Construyendo tu diagnóstico...'];
+  const msgs=['Revisando tu presencia...','Verificando Google Business...','Analizando visibilidad...','Evaluando reputación...','Construyendo tu diagnóstico...'];
   let mi=0;
   const iv=setInterval(()=>{mi++;if(mi<msgs.length)document.getElementById('lmC').textContent=msgs[mi];},800);
-  callAPIc().then(r=>{clearInterval(iv);renderC(r);}).catch(()=>{clearInterval(iv);renderC(fallbackC());});
+  verifyPlaces().then(()=>callAPIc()).then(r=>{clearInterval(iv);renderC(r);}).catch(()=>{clearInterval(iv);renderC(fallbackC());});
+}
+
+// Verificación real con Google Places API vía serverless function
+async function verifyPlaces(){
+  const pi=ansC['presencia_info']||{};
+  if(!pi.name){ansC['places_data']={verified:false,reason:'sin_nombre'};return;}
+  try{
+    const r=await fetch('/api/places',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({businessName:pi.name,city:pi.city||''})
+    });
+    const d=await r.json();
+    ansC['places_data']=d;
+  }catch(e){
+    // Fallo gracioso — PIXI sigue en modo declarativo
+    ansC['places_data']={verified:false,reason:'error'};
+  }
 }
 
 function buildScore(){
@@ -370,10 +527,33 @@ function buildScore(){
   const pS=STEPS.find(s=>s.key==='presencia');
   if(pS&&ansC.presencia!==undefined)sc.presencia=pS.scores[ansC.presencia];
   const pi=ansC['presencia_info']||{};
-  let pb=0;if(pi.ig)pb+=5;if(pi.fb)pb+=3;if(pi.web)pb+=7;if(pi.gbp==='si')pb+=5;
-  sc.presencia=Math.min(100,(sc.presencia||35)+pb);
+  let pb=0;if(pi.ig)pb+=7;if(pi.web)pb+=8;if(pi.gbp==='si')pb+=5;
+  let presDeclared=Math.min(100,(sc.presencia||35)+pb);
+
+  // Si hay verificación real de Google Places, combinar 60% real / 40% declarado
+  const pd=ansC['places_data']||{};
+  if(pd.verified&&pd.found&&pd.data){
+    const realScore=pd.data.profileCompleteness||0;
+    sc.presencia=Math.round(realScore*0.6+presDeclared*0.4);
+  }else if(pd.verified&&pd.found===false){
+    // Verificado pero NO existe ficha en Google — penalización real
+    sc.presencia=Math.min(presDeclared,35);
+  }else{
+    // Sin verificación — usar solo declarado
+    sc.presencia=presDeclared;
+  }
+
   let rep=25;if(ansC.reviews_pide==='si')rep+=35;if(ansC.reviews_responde==='si')rep+=30;
+  // Si Places confirma reviews reales, ajustar reputación con data dura
+  if(pd.verified&&pd.found&&pd.data){
+    const rc=pd.data.reviewCount||0;
+    if(rc>=30)rep=Math.max(rep,75);
+    else if(rc>=10)rep=Math.max(rep,55);
+    else if(rc>=1)rep=Math.max(rep,40);
+    else rep=Math.min(rep,30);
+  }
   sc.reputacion=Math.min(100,rep);
+
   const rd=ansC['relevancia_data']||{};
   let rel=20;if(rd.google)rel+=15;if(rd.google_yn==='si')rel+=20;if(rd.gpt)rel+=15;if(rd.gpt_yn==='si')rel+=25;
   sc.relevancia=Math.min(100,rel);
@@ -389,19 +569,41 @@ async function callAPIc(){
   const pS=STEPS.find(s=>s.key==='presencia');
   const sem=total<40?'rojo':total<70?'amarillo':'verde';
 
+  // Verificación real de Google Places
+  const pd=ansC['places_data']||{};
+  let realCtx='';
+  if(pd.verified&&pd.found&&pd.data){
+    const d=pd.data;
+    realCtx=`
+VERIFICACIÓN REAL EN GOOGLE (datos confirmados, úsalos en los hallazgos):
+- Ficha de Google Business: ENCONTRADA (${d.name})
+- Rating real: ${d.rating||'sin calificación'} estrellas
+- Reseñas reales: ${d.reviewCount} reviews
+- Fotos en el perfil: ${d.photoCount}
+- Tiene sitio web vinculado: ${d.hasWebsite?'sí':'no'}
+- Tiene horarios publicados: ${d.hasHours?'sí':'no'}
+- Tiene descripción editorial: ${d.hasSummary?'sí':'no'}
+- Completitud del perfil de Google: ${d.profileCompleteness}/100`;
+  }else if(pd.verified&&pd.found===false){
+    realCtx=`
+VERIFICACIÓN REAL EN GOOGLE (dato confirmado, úsalo en los hallazgos):
+- Ficha de Google Business: NO ENCONTRADA. El negocio no aparece en Google Maps/Business con el nombre y ciudad dados. Esto es un hallazgo crítico de visibilidad.`;
+  }
+
   const ctx=`Negocio: "${userC.brand}"
 Claridad (cómo lo describen clientes): "${cS?.opts?.[ansC.claridad]||'no respondido'}"
-Redes: Instagram=${pi.ig||'ninguno'}, Facebook=${pi.fb||'ninguno'}, Web=${pi.web||'ninguna'}, Google Business=${pi.gbp==='si'?'sí tiene':'no tiene'}
+Redes: Instagram=${pi.ig||'ninguno'}, Web=${pi.web||'ninguna'}, Google Business declarado=${pi.gbp==='si'?'sí tiene':'no tiene'}
 Auto-evaluación presencia: "${pS?.opts?.[ansC.presencia]||'no respondido'}"
 Reviews: pide reviews=${ansC.reviews_pide||'no respondido'}, responde reviews=${ansC.reviews_responde||'no respondido'}
 Búsqueda Google: "${rd.google||'no indicado'}" → se encuentra: ${rd.google_yn||'no respondido'}
-Búsqueda ChatGPT: "${rd.gpt||'no indicado'}" → se encuentra: ${rd.gpt_yn||'no respondido'}
+Búsqueda ChatGPT: "${rd.gpt||'no indicado'}" → se encuentra: ${rd.gpt_yn||'no respondido'}${realCtx}
 Scores calculados: Claridad ${sc.claridad}, Presencia ${sc.presencia}, Reputación ${sc.reputacion}, Relevancia ${sc.relevancia}, Total ${total}
 Semáforo: ${sem}`;
 
   const prompt=`Eres PIXI, herramienta de diagnóstico de visibilidad para negocios de hospitalidad de La Colectiva©.
 Tono: directo, específico, empático. Sin buzzwords. Español.
 Usa los datos reales del usuario para generar hallazgos personalizados — no genéricos.
+Si hay datos de VERIFICACIÓN REAL EN GOOGLE, priorízalos: son hechos confirmados, no percepciones. Cita números concretos (reviews, rating, fotos) en los hallazgos.
 
 ${ctx}
 
@@ -423,6 +625,8 @@ function fallbackC(){
 function renderC(data){
   document.getElementById('rbnC').textContent=userC.brand||'Tu negocio';
   document.getElementById('rsnC').textContent=Math.round(data.total);
+  const totalColor = data.semaforo==='verde' ? '#1D9E75' : data.semaforo==='amarillo' ? '#EF9F27' : '#E24B4A';
+  document.getElementById('rsnC').style.color = totalColor;
   if(data.cierre)document.getElementById('cierreC').textContent=data.cierre;
   const dims=[['claridad','Claridad'],['presencia','Presencia'],['reputacion','Reputación'],['relevancia','Relevancia']];
   document.getElementById('rdgC').innerHTML=dims.map(([k,lbl])=>{
