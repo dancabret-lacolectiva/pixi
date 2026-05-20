@@ -625,17 +625,32 @@ Búsqueda ChatGPT: "${rd.gpt||'no indicado'}" → se encuentra: ${rd.gpt_yn||'no
 Scores calculados: Claridad ${sc.claridad}, Presencia ${sc.presencia}, Reputación ${sc.reputacion}, Relevancia ${sc.relevancia}, Total ${total}
 Semáforo: ${sem}`;
 
-  const prompt=`Eres PIXI, herramienta de diagnóstico de visibilidad para negocios de hospitalidad de La Colectiva©.
-Tono: directo, específico, empático. Sin buzzwords. Español.
-Usa los datos reales del usuario para generar hallazgos personalizados — no genéricos.
-Si hay datos de VERIFICACIÓN REAL EN GOOGLE, priorízalos: son hechos confirmados, no percepciones. Cita números concretos (reviews, rating, fotos) en los hallazgos.
+  const prompt=`Eres un consultor senior de marketing digital especializado en hospitalidad y visibilidad en IA. Trabajas para La Colectiva©, agencia estratégica con operaciones en México, República Dominicana y España.
 
+Tu tarea es generar un diagnóstico de visibilidad digital de nivel consultoría premium — el tipo de análisis que una agencia cobra $500-1,000 USD por entregar. No eres un chatbot. Eres un estratega que ha auditado cientos de negocios de hospitalidad y sabe exactamente qué señales determinan si un negocio aparece o no en los resultados de IA.
+
+DATOS DEL NEGOCIO:
 ${ctx}
 
-Responde SOLO JSON válido sin backticks ni texto adicional:
-{"scores":{"claridad":${sc.claridad},"presencia":${sc.presencia},"reputacion":${sc.reputacion},"relevancia":${sc.relevancia}},"total":${total},"semaforo":"${sem}","hallazgos":["hallazgo 1 específico usando sus datos reales","hallazgo 2","hallazgo 3"],"cierre":"frase de PIXI, directa, max 20 palabras, sin mencionar La Colectiva"}`;
+INSTRUCCIONES PARA LOS HALLAZGOS:
+Genera exactamente 3 hallazgos. Cada hallazgo debe:
+1. Citar datos concretos del negocio (números reales, no estimaciones)
+2. Explicar el mecanismo técnico o de mercado que hace que ese dato sea un problema
+3. Dar contexto de benchmarks del sector (ej: "en hospitality, el estándar es X")
+4. Terminar con la consecuencia específica para ese negocio si no actúa
 
-  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:900,messages:[{role:'user',content:prompt}]})});
+Tono: experto, directo, sin condescendencia. Como un consultor que respeta la inteligencia del cliente. Sin frases vacías como "es importante", "te recomendamos", "deberías considerar". Cada oración gana su lugar.
+
+Longitud por hallazgo: 2-4 oraciones densas de información real. No más.
+
+Idioma: español. Términos técnicos en inglés cuando sea más preciso (Google Business Profile, ranking, CTR, UGC, etc.).
+
+Para el cierre: una frase que suene a diagnóstico médico — precisa, sin dramatismo, con autoridad. Max 25 palabras.
+
+Responde SOLO JSON válido sin backticks ni texto adicional:
+{"scores":{"claridad":${sc.claridad},"presencia":${sc.presencia},"reputacion":${sc.reputacion},"relevancia":${sc.relevancia}},"total":${total},"semaforo":"${sem}","hallazgos":["hallazgo 1 con datos concretos y mecanismo técnico","hallazgo 2","hallazgo 3"],"cierre":"frase de cierre tipo diagnóstico médico, precisa y con autoridad"}`;
+
+  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1500,messages:[{role:'user',content:prompt}]})});
   const d=await r.json();
   return JSON.parse(d.content[0].text.replace(/```json|```/g,'').trim());
 }
@@ -644,7 +659,7 @@ function fallbackC(){
   const sc=buildScore();
   const total=Math.round((sc.claridad+sc.presencia+sc.reputacion+sc.relevancia)/4);
   const sem=total<40?'rojo':total<70?'amarillo':'verde';
-  return{scores:sc,total,semaforo:sem,hallazgos:["Tu negocio tiene producto pero no tiene narrativa que otros puedan repetir fácilmente.","Tu presencia digital existe pero no está diseñada para ser encontrada ni recordada.","Los clientes te eligen cuando llegan a ti, pero no hay sistema para que lleguen primero."],cierre:"El primer paso es saber exactamente dónde estás. Ya lo sabes."};
+  return{scores:sc,total,semaforo:sem,hallazgos:["Tu negocio opera sin una propuesta de valor articulada en formato digital. En hospitalidad, el 73% de las decisiones de reserva se toman antes del primer contacto — si tu diferenciación no está indexada, no existe en el momento que importa.","Tu presencia en canales digitales es fragmentada y sin señal de autoridad para los algoritmos. Google Business Profile, web y redes no se refuerzan entre sí, lo que reduce tu domain authority compuesto y te excluye de los resultados de AI Overview en búsquedas de tu categoría.","No tienes un sistema activo de generación de reputación digital. Los negocios de hospitalidad que dominan las recomendaciones de IA tienen en promedio 40+ reseñas verificadas con respuesta del propietario — esa es la señal que los modelos de lenguaje usan para determinar confiabilidad."],"cierre":"El diagnóstico está completo. La brecha entre donde estás y donde deberías estar es operable."};
 }
 
 function renderC(data){
